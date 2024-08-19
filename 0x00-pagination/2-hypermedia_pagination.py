@@ -42,9 +42,6 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[str, Any]:
         """Use hypermedia pagination to retrieve data
         """
-        assert isinstance(page, int) and isinstance(page_size, int)
-        assert page > 0 and page_size > 0
-
         self.hyper: Dict[str, Any] = {}
 
         data = self.get_page(page, page_size)
