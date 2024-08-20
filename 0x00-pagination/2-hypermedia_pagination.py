@@ -46,7 +46,7 @@ class Server:
 
         data = self.get_page(page, page_size)
         pages = math.ceil(len(self.__dataset) / page_size)
-        next_page = (page + 1) if len(data) > 0 else None
+        next_page = (page + 1) if len(data) > pages else None
         prev_page = (page - 1) if page > 1 else None
 
         self.hyper['page_size'] = len(data)
